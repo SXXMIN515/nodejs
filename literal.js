@@ -35,3 +35,9 @@ console.log(fn, ln, age);
 // "홍길동", "김민식", "박충원", "홍영기"
 let [ary1, ary2, ...ary3] = getStudentInfo();
 console.log(ary1, ary2, ary3);
+
+// Default Function Parameter.
+function minus(n1 = 0, n2 = 0) {
+  return n1 - n2;
+}
+console.log(minus(10));
