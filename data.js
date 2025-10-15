@@ -9,4 +9,9 @@ function sum(a, b) {
   return a + b;
 }
 const PI = 3.14;
+
+function getStudentInfo() {
+  return ["홍길동", "김민식", "박충원", "홍영기"];
+}
+
 export { studentAry, sum, PI };
