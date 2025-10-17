@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="post_register()">등록(post요청)</button>
+    <button onclick="put_modify()">수정(put요청)</button>
+    <button onclick="delete_remove()">삭제(delete요청)</button>
+    <script>
+      function delete_remove() {
+        fetch("http://localhost:3000/posts/4", {
+          method: "DELETE",
+        })
+          .then((response) => response.json())
+          .then((json) => {
+            console.log(json);
+            alert("삭제되었습니다.");
+          })
+          .catch((error) => console.error("Error:", error));
+      }
+
+      function put_modify() {
+        fetch("http://localhost:3000/posts/4", {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json; charset=UTF-8",
+          },
+          body: JSON.stringify({
+            title: "4번글 수정",
+            content: "4번글 내용 수정",
+            id: 4,
+          }),
+        })
+          .then((response) => response.json())
+          .then((json) => {
+            console.log(json);
+            alert("수정되었습니다.");
+          })
+          .catch((error) => console.error("Error:", error));
+      }
+
+      function post_register() {
+        // Resource(URL VS. URI) + Method(POST) => Restful API
+        // http://localhost:3000/posts => URL, /posts => URI
+        fetch("http://localhost:3000/posts", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            title: "post test4",
+            content: "post content4",
+            id: 4,
+          }),
+        })
+          .then((response) => response.json())
+          .then((json) => {
+            console.log(json);
+            alert("등록되었습니다.");
+          })
+          .catch((error) => console.error("Error:", error));
+      }
+    </script>
+  </body>
+</html>
