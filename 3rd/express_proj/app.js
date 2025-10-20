@@ -80,11 +80,11 @@ app.post("/", (req, res) => {
 
 // 파일업로드 테스트.
 // 파일 하나 업로드
-// app.post("/upload", upload.single("profile"), (req, res) => {
-//   // 'profile'은 form에서 업로드하는 파일의 name속성값.
-//   console.log(req.file); //업로드된 파일 정보.
-//   res.send("파일 업로드 완료!");
-// });
+app.post("/upload", upload.single("profile"), (req, res) => {
+  // 'profile'은 form에서 업로드하는 파일의 name속성값.
+  console.log(req.file); //업로드된 파일 정보.
+  res.send("파일 업로드 완료!");
+});
 
 // 숙제: 여러파일 업로드 처리.
 app.post("/upload", upload.array("profile", 10), (req, res) => {

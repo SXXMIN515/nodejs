@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>아이디&전화번호 입력 시 새로운 비번을 발송하기.</h3>
+    <form action="sendmail" method="get">
+      <label for="userid">아이디:</label>
+      <input type="text" id="userid" name="userid" required /><br /><br />
+      <label for="phone">전화번호:</label>
+      <input type="text" id="phone" name="phone" required /><br /><br />
+      <input type="submit" value="비밀번호 재설정 이메일 발송" />
+    </form>
+  </body>
+</html>

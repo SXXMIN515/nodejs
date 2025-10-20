@@ -25,6 +25,7 @@ async function getCryptoPassword(password) {
         return;
       }
       // console.log(dbPass == key.toString("base64") ? "same" : "different");
+      // console.log(key.toString("base64"));
       resolve(dbPass == key.toString("base64") ? "same" : "different");
     });
   });
