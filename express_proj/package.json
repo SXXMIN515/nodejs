@@ -1,0 +1,19 @@
+{
+  "name": "express_proj",
+  "version": "1.0.0",
+  "description": "express를 활용한 서버",
+  "license": "ISC",
+  "author": "soomin",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "dependencies": {
+    "cookie-session": "^2.1.1",
+    "express": "^5.1.0",
+    "multer": "^2.0.2",
+    "nodemon": "^3.1.10"
+  }
+}
