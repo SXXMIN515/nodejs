@@ -48,6 +48,7 @@ app.post("/signin", async (req, res) => {
       "SELECT * FROM customers WHERE email = ? AND password_hash = ?",
       [email, cryptoData.password]
     );
+    console.log(result);
     res.send(result);
     let user = result[0];
     // password hash 비교.
