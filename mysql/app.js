@@ -1,4 +1,6 @@
 const express = require("express");
+const cors = require("cors");
+
 const mysql = require("./sql/index");
 const nodemailer = require("nodemailer");
 const crypto = require("crypto");
@@ -9,6 +11,11 @@ const port = 3000;
 
 // 정적디렉토리 설정.
 app.use(express.static("public"));
+app.use(cors());
+
+// middleware setup
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 const transporter = nodemailer.createTransport({
   host: "smtp.daum.net",
@@ -19,10 +26,6 @@ const transporter = nodemailer.createTransport({
     pass: "poiafgyfwopqduqd",
   },
 });
-
-// middleware setup
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
